@@ -89,7 +89,7 @@ body {
           animation-duration: 1s;
           animation-timing-function: ease-out;  
     
-    as below:*/
+    see code immediatelly below:*/
 
   animation: moveInRight 1s ease-out;
 }
