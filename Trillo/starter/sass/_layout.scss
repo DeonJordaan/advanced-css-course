@@ -1,0 +1,31 @@
+.container {
+	max-width: 120rem; //Use max-width so that it can shrink if there's not enough space to display it
+	margin: 8rem auto;
+	background-color: var(--color-grey-light-2);
+	box-shadow: var(--shadow-dark);
+
+	min-height: 50rem;
+}
+
+.header {
+	height: 7rem;
+	background-color: #fff;
+	border-bottom: var(--color-grey-light-2);
+}
+
+.content {
+	display: flex;
+}
+
+.sidebar {
+	background-color: var(--color-grey-dark-1);
+
+	flex: 0 0 18%;
+}
+
+.hotel-view {
+	background-color: #fff;
+	background-color: orangered;
+
+	flex: 1; //Use 'Flex: 1; when we want tohe item to grow and use up all the available space
+}
