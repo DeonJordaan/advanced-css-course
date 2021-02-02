@@ -1,3 +1,32 @@
 .features {
-	background-color: $color-grey-light-2;
+	grid-column: center-start / center-end;
+
+	margin: 15rem 0;
+
+	display: grid;
+	//grid-template-columns: repeat(3, 1fr);   //The line below is a different version of this to make the grid responsive without using media queries
+	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	grid-gap: 6rem;
+	align-items: start;
+}
+
+.feature {
+	display: grid;
+	grid-template-columns: min-content 1fr;
+	//Use 'min-content' because if we decide to make the icon smaller, the column will adjust to suite. Can slo define the size as 4.5rem, but then we'd need to adjust it when adjusting icon size. Can also leave it on auto.
+	//Can also define the rows, but not strictly necessary as they will use up the space they need to accomodate their content
+	grid-row-gap: 1.5rem;
+	grid-column-gap: 2.5rem;
+
+	&__icon {
+		fill: $color-primary;
+		width: 4.5rem;
+		height: 4.5rem;
+		grid-row: 1 / span 2; //Cannot use '-1' in stead of 'span' here as we did not define an explicit grid. '-1' goes to end of explicit grid and not implicit grid as we have here.
+		transform: translateY(-1rem);
+	}
+
+	&__text {
+		font-size: 1.7rem;
+	}
 }
