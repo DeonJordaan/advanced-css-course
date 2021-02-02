@@ -3,14 +3,25 @@
 
 	margin: 15rem 0;
 
-	display: grid;
-	//grid-template-columns: repeat(3, 1fr);   //The line below is a different version of this to make the grid responsive without using media queries
-	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-	grid-gap: 6rem;
-	align-items: start;
+	@supports (display: grid) {
+		display: grid;
+		//grid-template-columns: repeat(3, 1fr);   //The line below is a different version of this to make the grid responsive without using media queries
+		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		grid-gap: 6rem;
+		align-items: start;
+	}
 }
 
 .feature {
+	float: left;
+	width: 33.3333%;
+	margin-bottom: 6rem;
+
+	@supports (display: grid) {
+		width: auto;
+		margin-bottom: 0;
+	}
+
 	display: grid;
 	grid-template-columns: min-content 1fr;
 	//Use 'min-content' because if we decide to make the icon smaller, the column will adjust to suite. Can slo define the size as 4.5rem, but then we'd need to adjust it when adjusting icon size. Can also leave it on auto.
